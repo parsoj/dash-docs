@@ -203,7 +203,7 @@ The Argument DB-PATH should be a string with the sqlite db path."
 (defun dash-docs-read-json-from-url (url)
   "Read and return a JSON object from URL."
   (if (eq system-type 'darwin)
-      "Use different method for MacOS because url-retrieve-synchronously is not working correctly on OSX"
+      ;;Use different method for MacOS because url-retrieve-synchronously is not working correctly on OSX
       (let ((tmp-buffer "*helm-dash-download*"))
         (shell-command (concat "curl -s " url) tmp-buffer)
         (with-current-buffer tmp-buffer
